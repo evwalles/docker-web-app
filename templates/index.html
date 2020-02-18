@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>We The People</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">List of Vistors</h1>
+    <h4 style="text-align: center">Below is a list of all the people who have visitied this site and added their name.</h4>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Options</th>
+        </tr>
+        {% for person in people %}
+            <tr>
+                <td>{{ person.name }}</td>
+                <td>
+                    <a href="/delete/{{person.name}}">Delete</a>
+                    <a href="/update/{{person.name}}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="form" style="text-align: center;">
+        <form action="/" method="POST">
+            <input type="text" name="name" id="name">
+            <input type="submit" value="Add Person">
+        </form>
+    </div>
+</div>
+{% endblock %}
