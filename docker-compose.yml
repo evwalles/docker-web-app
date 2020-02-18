@@ -3,7 +3,7 @@ version: "3"
 services:
     web:
         build: .
-        container_name: simplewebapp
+        container_name: webapp
         ports:
             - "5000:8000"
         links:
