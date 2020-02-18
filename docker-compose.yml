@@ -3,14 +3,20 @@ version: "3"
 services:
     web:
         build: .
-        container_name: webapp
+        image: docker-web-app_web:latest
         ports:
-            - "5000:8000"
+            - "80:8000"
         links:
             - db
+        networks:
+            - mynet
     
     db:
-        container_name: mongo
         image: mongo:latest
         ports:
             - "27017:27017"
+        networks:
+            - mynet
+
+networks:
+    mynet:
