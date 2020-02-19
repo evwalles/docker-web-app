@@ -4,19 +4,13 @@ services:
     web:
         build: .
         image: docker-web-app_web:latest
+        container_name: webapp
         ports:
-            - "80:8000"
+            - "5000:8000"
         links:
             - db
-        networks:
-            - mynet
     
     db:
         image: mongo:latest
         ports:
             - "27017:27017"
-        networks:
-            - mynet
-
-networks:
-    mynet:

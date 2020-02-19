@@ -6,7 +6,7 @@ import sys
 import optparse
 
 app = Flask(__name__)
-client = MongoClient('mongo', 27017)
+client = MongoClient('db', 27017)
 db = client.peopledb
 
 @app.route('/', methods=['POST', 'GET'])
