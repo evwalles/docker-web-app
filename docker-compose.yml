@@ -9,8 +9,13 @@ services:
             - "5000:8000"
         links:
             - db
+        deploy:
+            replicas: 2
     
     db:
         image: mongo:latest
         ports:
             - "27017:27017"
+        deploy:
+            placement:
+                constraints: [node.role == manager]
