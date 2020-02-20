@@ -4,7 +4,7 @@ services:
     web:
         build: .
         image: evwalles/docker-web-app:latest
-        container_name: webapp
+        container_name: docker-web-app
         ports:
             - "5000:8000"
         links:
