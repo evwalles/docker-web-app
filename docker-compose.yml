@@ -3,7 +3,7 @@ version: "3"
 services:
     web:
         build: .
-        image: evwalles/docker-web-app
+        image: evwalles/docker-web-app:latest
         container_name: webapp
         ports:
             - "5000:8000"
